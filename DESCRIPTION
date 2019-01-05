@@ -1,5 +1,5 @@
 Package: footrulr
-Title: What the Package Does (One Line, Title Case)
+Title: Compare sentences using Machine Translation and Text Summarization evaluation metrics
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Kanishka",
@@ -16,3 +16,4 @@ Suggests:
 Imports: 
     tokenizers,
     purrr
+RoxygenNote: 6.1.1

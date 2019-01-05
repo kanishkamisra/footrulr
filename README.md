@@ -1,22 +1,30 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # footrulr
 
-The goal of footrulr is to provide some functionality to compute sentence comparisons using metrics frequently employed in Machine Translation and Text Summarization evaluation.
+[![CRAN
+status](https://www.r-pkg.org/badges/version/footrulr)](https://cran.r-project.org/package=footrulr)
 
-The name is inspired from Rstudio's yardstick package for Machine Learning evaluation metrics.
+The goal of footrulr is to provide some functionality to compute
+sentence comparisons using metrics frequently employed in Machine
+Translation and Text Summarization evaluation.
+
+The name is inspired from Rstudio’s [yardstick
+package](https://tidymodels.github.io/yardstick/) for Machine Learning
+evaluation metrics.
 
 ## Installation
 
 You can install the development version of footrulr from github with:
-
-``` r
-devtools::install_github("kanishkamisra/footrulr")
-```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-## basic example code
-```
+library(footrulr)
 
+bleu("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on the mat"), n = 2)
+#> [1] 0.6666667
+```
