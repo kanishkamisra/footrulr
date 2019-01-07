@@ -25,6 +25,8 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(footrulr)
 
-bleu("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on the mat"), n = 2)
-#> [1] 0.6666667
+bleu("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
+#> [1] 0.4
+bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
+#> [1] 0.5
 ```
