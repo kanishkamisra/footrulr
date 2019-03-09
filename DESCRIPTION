@@ -1,5 +1,6 @@
 Package: footrulr
-Title: Compare sentences using Machine Translation and Text Summarization evaluation metrics
+Title: Compare sentences using Machine Translation and Text
+    Summarization evaluation metrics
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Kanishka",
@@ -8,15 +9,15 @@ Authors@R:
            email = "kmisra@purdue.edu")
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
+URL: https://github.com/kanishkamisra/footrulr
+BugReports: https://github.com/kanishkamisra/footrulr/issues
+Imports: 
+    purrr,
+    tokenizers
 Suggests: 
     covr,
     testthat
-Imports: 
-    tokenizers,
-    purrr
-RoxygenNote: 6.1.1
+Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/kanishkamisra/footrulr
-BugReports: https://github.com/kanishkamisra/footrulr/issues
+RoxygenNote: 6.1.1
