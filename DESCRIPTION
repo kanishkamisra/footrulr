@@ -32,7 +32,7 @@ BugReports: https://github.com/kanishkamisra/footrulr/issues
 Depends:
     R (>= 3.1)
 Imports: 
-    purrr (>= 0.3.1),
+    purrr (>= 0.3.0),
     tokenizers (>= 0.2.1)
 Suggests: 
     covr (>= 3.2.1),
