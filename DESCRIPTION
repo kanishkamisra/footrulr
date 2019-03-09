@@ -1,23 +1,45 @@
 Package: footrulr
-Title: Compare sentences using Machine Translation and Text
-    Summarization evaluation metrics
+Title: Measure Quality of Machine Generated Texts
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Kanishka",
-           family = "Misra",
-           role = c("aut", "cre"),
-           email = "kmisra@purdue.edu")
-Description: What the package does (one paragraph).
+    c(person(given = "Kanishka",
+             family = "Misra",
+             role = c("aut", "cre"),
+             email = "kmisra@purdue.edu"),
+      person(given = "William",
+             family = "Bonnell",
+             role = "ctb",
+             email = "wtb3na@virginia.edu"),
+      person(given = "Joshua",
+             family = "Goldberg",
+             role = "ctb",
+             email = "josh.goldberg1@outlook.com"),
+      person(given = "Mauro",
+             family = "Lepore",
+             role = "ctb",
+             email = "maurolepore@gmail.com",
+             comment = c(ORCID = "0000-0002-1986-7988")),
+      person(given = "Katherine",
+             family = "Simeon",
+             role = "ctb",
+             email = "katherine@rladies.org"))
+Description: The goal of footrulr is to provide some
+    functionality to compute sentence comparisons using metrics frequently
+    employed in Machine Translation and Text Summarization evaluation.
 License: MIT + file LICENSE
 URL: https://github.com/kanishkamisra/footrulr
 BugReports: https://github.com/kanishkamisra/footrulr/issues
+Depends:
+    R (>= 3.1)
 Imports: 
-    purrr,
-    tokenizers
+    purrr (>= 0.3.1),
+    tokenizers (>= 0.2.1)
 Suggests: 
-    covr,
-    testthat
+    covr (>= 3.2.1),
+    spelling (>= 2.0),
+    testthat (>= 2.0.1)
 Encoding: UTF-8
+Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
