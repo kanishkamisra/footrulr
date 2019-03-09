@@ -17,3 +17,6 @@ Imports:
     tokenizers,
     purrr
 RoxygenNote: 6.1.1
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/kanishkamisra/footrulr
+BugReports: https://github.com/kanishkamisra/footrulr/issues
