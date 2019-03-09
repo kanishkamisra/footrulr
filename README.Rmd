@@ -34,3 +34,8 @@ library(footrulr)
 bleu("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
 bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
 ```
+
+
+### chirunconf team
+
+* Mauro Lepore [@mauro_lepore(https://twitter.com/mauro_lepore)
