@@ -1,24 +1,20 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+footrulr
+========
 
-# footrulr
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/footrulr)](https://cran.r-project.org/package=footrulr) -->
+The goal of footrulr is to provide some functionality to compute sentence comparisons using metrics frequently employed in Machine Translation and Text Summarization evaluation.
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/footrulr)](https://cran.r-project.org/package=footrulr)
+The name is inspired from Rstudio's [yardstick package](https://tidymodels.github.io/yardstick/) for Machine Learning evaluation metrics.
 
-The goal of footrulr is to provide some functionality to compute
-sentence comparisons using metrics frequently employed in Machine
-Translation and Text Summarization evaluation.
-
-The name is inspired from Rstudio’s [yardstick
-package](https://tidymodels.github.io/yardstick/) for Machine Learning
-evaluation metrics.
-
-## Installation
+Installation
+------------
 
 You can install the development version of footrulr from github with:
 
-## Example
+Example
+-------
 
 This is a basic example which shows you how to solve a common problem:
 
@@ -33,4 +29,5 @@ bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the ma
 
 ### chirunconf team
 
-  - Mauro Lepore \[@mauro\_lepore(<https://twitter.com/mauro_lepore>)
+-   Mauro Lepore \[@mauro\_lepore\](<https://twitter.com/mauro_lepore>)
+-   [Katherine Simeon](https://katherinesimeon.github.io/)
