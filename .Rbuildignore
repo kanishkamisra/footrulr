@@ -1,3 +1,4 @@
+^\.github$
 ^README\.Rmd$
 ^codecov\.yml$
 ^appveyor\.yml$
