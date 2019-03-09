@@ -4,9 +4,11 @@
 \name{footrulr-package}
 \alias{footrulr}
 \alias{footrulr-package}
-\title{footrulr: Compare sentences using Machine Translation and Text Summarization evaluation metrics}
+\title{footrulr: Measure Quality of Machine Generated Texts}
 \description{
-What the package does (one paragraph).
+The goal of footrulr is to provide some
+    functionality to compute sentence comparisons using metrics frequently
+    employed in Machine Translation and Text Summarization evaluation.
 }
 \seealso{
 Useful links:
@@ -18,6 +20,14 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Kanishka Misra \email{kmisra@purdue.edu}
+
+Other contributors:
+\itemize{
+  \item William Bonnell \email{wtb3na@virginia.edu} [contributor]
+  \item Joshua Goldberg \email{josh.goldberg1@outlook.com} [contributor]
+  \item Mauro Lepore \email{maurolepore@gmail.com} (0000-0002-1986-7988) [contributor]
+  \item Katherine Simeon \email{katherine@rladies.org} [contributor]
+}
 
 }
 \keyword{internal}
