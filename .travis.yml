@@ -3,3 +3,12 @@
 language: R
 sudo: false
 cache: packages
+
+matrix:
+  include:
+  - r: devel
+  - r: release
+  - r: oldrel
+  - r: 3.3
+  - r: 3.2
+  - r: 3.1
