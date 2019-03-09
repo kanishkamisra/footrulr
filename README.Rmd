@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 ```
 # footrulr
 
-[![CRAN status](https://www.r-pkg.org/badges/version/footrulr)](https://cran.r-project.org/package=footrulr)
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/footrulr)](https://cran.r-project.org/package=footrulr) -->
 
 The goal of footrulr is to provide some functionality to compute sentence comparisons using metrics frequently employed in Machine Translation and Text Summarization evaluation.
 
@@ -38,4 +38,5 @@ bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the ma
 
 ### chirunconf team
 
-* Mauro Lepore [@mauro_lepore(https://twitter.com/mauro_lepore)
+* Mauro Lepore [@mauro_lepore](https://twitter.com/mauro_lepore)  
+* [Katherine Simeon](https://katherinesimeon.github.io/)  
