@@ -1,33 +1,44 @@
-#' BLEU (Bilingual Evaluation Understudy).
+#' BLEU  (Bilingual Evaluation Understudy)
 #'
-#' Evaluate a machine translation candidate against a set of reference
-#' sentences.
+#' BLEU score calculations over a data frame.
 #'
-#' @param candidate Candidate sentence.
+#' @param .data data frame (data that was processed by a data loading function to be created)
+#' @param n desired number of ngrams (defaults to 4)
 #'
-#' @param reference Vector of reference sentences.
-#' @param n ngram size, default = 1.
+#' @return tibble with data in long form. Each row contains the BLEU score for each ngram value for each candidate-reference pair.
 #'
-#' @return A double indicating the BLEU score between the candidate and the set
-#'   of references.
+#' @importFrom purrr walk walk2
+#' @importFrom tibble as_tibble
 #'
-#' @importFrom tokenizers tokenize_ngrams
-#' @importFrom purrr map_int map_dbl
+#' @export
 #'
 #' @examples
-#' cand <- "the cat the cat on the mat"
-#' reference <- c("the cat is on the mat", "there is a cat on the mat")
-#' bleu(cand, reference, 2)
-#' @export
-bleu <- function(candidate, reference, n = 1) {
-  tokenized_candidate <- tokenize_ngrams(candidate, simplify = TRUE, n = n)
-  tokenized_references <- tokenize_ngrams(reference, n = n)
+#' # Our candidate and reference data
+#' candidate <- "The cat the cat on the mat"
+#' reference1 <- "The cat is on the mat"
+#' reference2 <- "There is a cat on the mat"
+#'
+#' # Create data frame
+#' pairs <- data.frame(cbind(candidate = c(candidate, candidate), reference = c(reference1, reference2)))
+#' sample_data <- cbind(system = c(1, 1), candidate_id = c(1, 1), reference_id = c(1, 2), pairs)
+#'
+#' # Run function
+#' bleu(sample_data)
 
-  cand_tokens <- length(tokenized_candidate)
+bleu <- function(.data, n = 4) {
+  walk(1:(length(colnames(.data))), function(x) .data[, x] <<- as.character(.data[, x]))
+  ngrams <- 1:n
 
-  clips <- map_dbl(unique(tokenized_candidate), function(x) {
-    max(map_int(tokenized_references, ~ sum(.x == x)))
+  .data_long <- as_tibble(.data[rep(seq_len(nrow(.data)), each = n), ])
+  .data_long["type"] <- paste0("BLUE_", ngrams)
+  .data_long["score"] <- NA_real_
+
+  rows <- nrow(.data_long)
+  ngram_sets <- rep(ngrams, times = nrow(.data))
+
+  walk2(1:rows, ngram_sets, function(row, ngram) {
+    .data_long[row, "score"] <<- bleu_vec(.data_long[row, 4][[1]], .data_long[row, 5][[1]], n = ngram)
   })
 
-  return(sum(clips) / cand_tokens)
+  .data_long
 }
