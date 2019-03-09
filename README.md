@@ -3,7 +3,9 @@
 
 # footrulr
 
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/footrulr)](https://cran.r-project.org/package=footrulr) -->
+<!-- badges: start -->
+
+<!-- badges: end -->
 
 The goal of footrulr is to provide some functionality to compute
 sentence comparisons using metrics frequently employed in Machine
