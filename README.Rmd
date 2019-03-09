@@ -40,3 +40,5 @@ bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the ma
 
 * Mauro Lepore [@mauro_lepore](https://twitter.com/mauro_lepore)  
 * [Katherine Simeon](https://katherinesimeon.github.io/)  
+* Will Bonnell [@_willdebras](https://twitter.com/_willdebras)
+
