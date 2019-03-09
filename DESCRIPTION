@@ -29,15 +29,17 @@ Description: The goal of footrulr is to provide some
 License: MIT + file LICENSE
 URL: https://github.com/kanishkamisra/footrulr
 BugReports: https://github.com/kanishkamisra/footrulr/issues
+Depends:
+    R (>= 3.1)
 Imports: 
     purrr,
     tokenizers
 Suggests: 
     covr,
-    testthat,
-    spelling
+    spelling,
+    testthat
 Encoding: UTF-8
+Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Language: en-US
