@@ -19,6 +19,11 @@ evaluation metrics.
 
 You can install the development version of footrulr from github with:
 
+``` r
+# install.packages("devtools")
+devtools::install_github("kanishkamisra/footrulr")
+```
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -32,9 +37,9 @@ bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the ma
 #> [1] 0.5
 ```
 
-### chirunconf team
+### Contributors at chirunconf
 
-  - Mauro Lepore
-    \[@mauro\_lepore\](<https://twitter.com/mauro_lepore>)  
-  - [Katherine Simeon](https://katherinesimeon.github.io/)  
-  - Will Bonnell \[@\_willdebras\](<https://twitter.com/_willdebras>)
+  - [Katherine Simeon](https://katherinesimeon.github.io/)
+  - [Mauro Lepore](https://github.com/maurolepore)
+  - [Joshua Goldberg](https://twitter.com/GoldbergData)
+  - [Will Bonnell](https://twitter.com/_willdebras)
