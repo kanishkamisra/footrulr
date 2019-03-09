@@ -9,6 +9,15 @@
 wmt18example
 }
 \description{
-wmt18example
+Example references
+\describe{
+\item{\code{system}}{character COLUMN_DESCRIPTION}
+\item{\code{id}}{integer COLUMN_DESCRIPTION}
+\item{\code{candidate}}{character COLUMN_DESCRIPTION}
+\item{\code{reference}}{character COLUMN_DESCRIPTION}
+}
+}
+\details{
+DETAILS
 }
 \keyword{datasets}

@@ -30,7 +30,7 @@ bleu <- function(.data, n = 4) {
   ngrams <- 1:n
 
   .data_long <- as_tibble(.data[rep(seq_len(nrow(.data)), each = n), ])
-  .data_long["type"] <- paste0("BLUE_", ngrams)
+  .data_long["type"] <- paste0("BLEU_", ngrams)
   .data_long["score"] <- NA_real_
 
   rows <- nrow(.data_long)

@@ -2,27 +2,31 @@
 % Please edit documentation in R/bleu.R
 \name{bleu}
 \alias{bleu}
-\title{BLEU (Bilingual Evaluation Understudy).}
+\title{BLEU  (Bilingual Evaluation Understudy)}
 \usage{
-bleu(candidate, reference, n = 1)
+bleu(.data, n = 4)
 }
 \arguments{
-\item{candidate}{Candidate sentence.}
+\item{.data}{data frame (data that was processed by a data loading function to be created)}
 
-\item{reference}{Vector of reference sentences.}
-
-\item{n}{ngram size, default = 1.}
+\item{n}{desired number of ngrams (defaults to 4)}
 }
 \value{
-A double indicating the BLEU score between the candidate and the set
-of references.
+tibble with data in long form. Each row contains the BLEU score for each ngram value for each candidate-reference pair.
 }
 \description{
-Evaluate a machine translation candidate against a set of reference
-sentences.
+BLEU score calculations over a data frame.
 }
 \examples{
-cand <- "the cat the cat on the mat"
-reference <- c("the cat is on the mat", "there is a cat on the mat")
-bleu(cand, reference, 2)
+# Our candidate and reference data
+candidate <- "The cat the cat on the mat"
+reference1 <- "The cat is on the mat"
+reference2 <- "There is a cat on the mat"
+
+# Create data frame
+pairs <- data.frame(cbind(candidate = c(candidate, candidate), reference = c(reference1, reference2)))
+sample_data <- cbind(system = c(1, 1), candidate_id = c(1, 1), reference_id = c(1, 2), pairs)
+
+# Run function
+bleu(sample_data)
 }
