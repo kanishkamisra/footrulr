@@ -30,3 +30,7 @@ bleu("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on
 bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
 #> [1] 0.5
 ```
+
+### chirunconf team
+
+  - Mauro Lepore \[@mauro\_lepore(<https://twitter.com/mauro_lepore>)
