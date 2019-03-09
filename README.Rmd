@@ -25,6 +25,11 @@ The name is inspired from Rstudio's [yardstick package](https://tidymodels.githu
 
 You can install the development version of footrulr from github with:
 
+```R
+# install.packages("devtools")
+devtools::install_github("kanishkamisra/footrulr")
+```
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -36,10 +41,9 @@ bleu("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on
 bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
 ```
 
+### Contributors at chirunconf
 
-### chirunconf team
-
-* Mauro Lepore [@mauro_lepore](https://twitter.com/mauro_lepore)  
-* [Katherine Simeon](https://katherinesimeon.github.io/)  
-* Will Bonnell [@_willdebras](https://twitter.com/_willdebras)
-
+* [Katherine Simeon](https://katherinesimeon.github.io/)
+* [Mauro Lepore](https://github.com/maurolepore)
+* [Joshua Goldberg](https://twitter.com/GoldbergData)
+* [Will Bonnell](https://twitter.com/_willdebras)
