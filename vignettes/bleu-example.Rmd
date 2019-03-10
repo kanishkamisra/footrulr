@@ -20,38 +20,46 @@ knitr::opts_chunk$set(
 library(footrulr)
 library(dplyr)
 library(ggplot2)
+library(purrr)
 ```
 
 # Read data 
 ```{r}
-system_1 <- footrulr(
-  cand_file = "https://raw.githubusercontent.com/kanishkamisra/footrulr/master/data-raw/newstest2018.LMU-nmt.5756.de-en", 
-  c("https://raw.githubusercontent.com/kanishkamisra/footrulr/master/data-raw/newstest2018-deen-ref-ts.en",
-    "https://raw.githubusercontent.com/kanishkamisra/footrulr/master/data-raw/newstest2018-deen-ref-ts2.en"
-  ))
 
-# subset small data for example
-system_1 <- system_1[1:100]
+directory <- "https://raw.githubusercontent.com/kanishkamisra/footrulr/master/data-raw/"
+
+systems <- c("newstest2018.LMU-nmt.5756.de-en", "newstest2018.JHU.5706.de-en", "newstest2018.LMU-unsup.5650.de-en")
+
+references <- c("newstest2018-deen-ref-ts.en", "newstest2018-deen-ref-ts2.en")
+
+system_results <- map_dfr(systems, function(x) {
+  system <- footrulr(paste0(directory, x), paste0(directory, references))
+  system <- system[1:100]
+  bleu(system)
+}, .id = "system")
+
+system_results
 ```
 
-# Compute BLEU scores
+# Compute BLEU scores by system
 ```{r}
-scores <- bleu(system_1)
+bleu_results <- system_results %>%
+  group_by(system, candidate) %>%
+  summarize(bleu = mean(scores, na.rm = TRUE))
+
+bleu_results
 ```
 
-```{r}
-(avg_scores <- scores %>% 
-  group_by(candidate) %>% 
-  summarise(avg_bleu = mean(scores)) %>% 
-  ungroup() %>% 
-  mutate(system_1_avg = mean(avg_bleu, na.rm = TRUE)))
-```
+# Plot BLEU Score distribution per system
 
-```{r warning=FALSE, fig.height=6, fig.width=7}
-avg_scores %>% 
-  ggplot(aes(avg_bleu)) +
-  geom_histogram(color = "white", fill = "navyblue") +
-  labs(title = "Average BLEU Scores",
-       x = "BLEU score")
+```{r, fig.height = 6, fig.width=7}
+bleu_results %>%
+  ggplot(aes(bleu, fill = system)) +
+  geom_histogram() +
+  facet_wrap(~system, nrow = 2, ncol = 2) +
+  scale_fill_viridis_d() +
+  theme_light() +
+  theme(
+    legend.position = "top"
+  )
 ```
-
