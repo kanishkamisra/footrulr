@@ -35,7 +35,8 @@ Imports:
     purrr (>= 0.3.0),
     tokenizers (>= 0.2.1),
     tibble (>= 2.0.1),
-    magrittr
+    magrittr,
+    readr
 Suggests: 
     covr (>= 3.2.1),
     spelling (>= 2.0),
