@@ -33,8 +33,8 @@ library(footrulr)
 
 bleu_vec("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
 #> [1] 0.4
-bleu_vec("The dragon ate dragon the pineapple", c("A dragon ate a pineapple", "The pineapple was eaten by the dragon"), n = 3)
-#> [1] 0
+bleu_vec("The dragon ate dragon the pineapple", c("A dragon ate a pineapple", "The pineapple was eaten by the dragon"), n = 1)
+#> [1] 0.8333333
 ```
 
 ### Contributors at chirunconf
