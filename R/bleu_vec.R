@@ -25,8 +25,6 @@ bleu_vec <- function(candidate, reference, n = 1) {
 
   cand_tokens <- length(tokenized_candidate)
 
-  cand_tokens %>% paste0()
-
   clips <- map_dbl(unique(tokenized_candidate), function(x) {
     max(map_int(tokenized_references, ~ sum(.x == x)))
   })
