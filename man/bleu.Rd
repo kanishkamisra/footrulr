@@ -7,7 +7,7 @@
 bleu(.data, n = 4)
 }
 \arguments{
-\item{.data}{data frame (data that was processed by a data loading function to be created)}
+\item{.data}{A list, where each candidate has multiple references  (dataframe that was transformed into a list by another function in this package)}
 
 \item{n}{desired number of ngrams (defaults to 4)}
 }
@@ -19,15 +19,10 @@ BLEU score calculations over a data frame.
 }
 \examples{
 # Our candidate and reference data
-candidate <- "The cat the cat on the mat"
-reference1 <- "The cat is on the mat"
-reference2 <- "There is a cat on the mat"
+sample_data <- list(list(candidate = "The cat the cat on the mat", references = c("The cat is on the mat", "There is a cat on the mat")),
+list(candidate = "The cat the cat on the map", references = c("The cat is on the ccccccat", "There is a cat on the mat")))
 
-# Create data frame
-pairs <- data.frame(cbind(
-  candidate = c(candidate, candidate), reference = c(reference1, reference2)
-))
-sample_data <- cbind(system = c(1, 1), candidate_id = c(1, 1), reference_id = c(1, 2), pairs)
+
 
 # Run function
 bleu(sample_data)
