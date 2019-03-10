@@ -1,0 +1,57 @@
+---
+title: "BLEU Scores"
+author: "Your client: Napolean"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, warning=FALSE, message=FALSE}
+library(footrulr)
+library(dplyr)
+library(ggplot2)
+```
+
+# Read data 
+```{r}
+system_1 <- footrulr(
+  cand_file = "https://raw.githubusercontent.com/kanishkamisra/footrulr/master/data-raw/newstest2018.LMU-nmt.5756.de-en", 
+  c("https://raw.githubusercontent.com/kanishkamisra/footrulr/master/data-raw/newstest2018-deen-ref-ts.en",
+    "https://raw.githubusercontent.com/kanishkamisra/footrulr/master/data-raw/newstest2018-deen-ref-ts2.en"
+  ))
+
+# subset small data for example
+system_1 <- system_1[1:100]
+```
+
+# Compute BLEU scores
+```{r}
+scores <- bleu(system_1)
+```
+
+```{r}
+(avg_scores <- scores %>% 
+  group_by(candidate) %>% 
+  summarise(avg_bleu = mean(scores)) %>% 
+  ungroup() %>% 
+  mutate(system_1_avg = mean(avg_bleu, na.rm = TRUE)))
+```
+
+```{r warning=FALSE, fig.height=6, fig.width=7}
+avg_scores %>% 
+  ggplot(aes(avg_bleu)) +
+  geom_histogram(color = "white", fill = "navyblue") +
+  labs(title = "Average BLEU Scores",
+       x = "BLEU score")
+```
+
