@@ -2,7 +2,7 @@
 title: "BLEU Scores"
 author: "Your client: Napolean"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: github_document
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}

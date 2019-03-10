@@ -31,10 +31,10 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(footrulr)
 
-bleu("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
+bleu_vec("the cat the cat on the mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
 #> [1] 0.4
-bleu("the cat is on a mat", c("the cat is on the mat", "there is a cat on the mat"), n = 3)
-#> [1] 0.5
+bleu_vec("The dragon ate dragon the pineapple", c("A dragon ate a pineapple", "The pineapple was eaten by the dragon"), n = 3)
+#> [1] 0
 ```
 
 ### Contributors at chirunconf
