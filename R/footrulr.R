@@ -6,7 +6,7 @@
 #'
 #' @return a footrulr object with candidate-reference collections
 #'
-#' @importFrom purrr map discard map_chr
+#' @importFrom purrr map discard map_chr map2
 #' @importFrom readr read_lines
 #' @export
 #'
