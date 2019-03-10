@@ -4,18 +4,19 @@
 \name{wmt18example}
 \alias{wmt18example}
 \title{wmt18example}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 24288 rows and 4 columns.}
+\format{A data frame with 24288 rows and 5 variables:
+\describe{
+\item{\code{system}}{character COLUMN_DESCRIPTION}
+\item{\code{candidate_id}}{integer COLUMN_DESCRIPTION}
+\item{\code{reference_id}}{integer COLUMN_DESCRIPTION}
+\item{\code{candidate}}{character COLUMN_DESCRIPTION}
+\item{\code{reference}}{character COLUMN_DESCRIPTION}
+}}
 \usage{
 wmt18example
 }
 \description{
 Example references
-\describe{
-\item{\code{system}}{character COLUMN_DESCRIPTION}
-\item{\code{id}}{integer COLUMN_DESCRIPTION}
-\item{\code{candidate}}{character COLUMN_DESCRIPTION}
-\item{\code{reference}}{character COLUMN_DESCRIPTION}
-}
 }
 \details{
 DETAILS

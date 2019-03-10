@@ -24,7 +24,9 @@ reference1 <- "The cat is on the mat"
 reference2 <- "There is a cat on the mat"
 
 # Create data frame
-pairs <- data.frame(cbind(candidate = c(candidate, candidate), reference = c(reference1, reference2)))
+pairs <- data.frame(cbind(
+  candidate = c(candidate, candidate), reference = c(reference1, reference2)
+))
 sample_data <- cbind(system = c(1, 1), candidate_id = c(1, 1), reference_id = c(1, 2), pairs)
 
 # Run function
