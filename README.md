@@ -43,3 +43,4 @@ bleu_vec("The dragon ate dragon the pineapple", c("A dragon ate a pineapple", "T
   - [Mauro Lepore](https://github.com/maurolepore)
   - [Joshua Goldberg](https://twitter.com/GoldbergData)
   - [Will Bonnell](https://twitter.com/_willdebras)
+  - [Weiyang Tham](https://twitter.com/wytham88?lang=en)
